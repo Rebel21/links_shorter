@@ -9,4 +9,4 @@ DB_USER = os.environ.get("DB_USER")
 DB_PASS = os.environ.get("DB_PASS")
 DB_NAME = os.environ.get("DB_NAME")
 
-SERVER_HOST_ADDR = 'http://192.168.3.75:8000/'
+SERVER_HOST_ADDR = 'http://localhost:8000/'
