@@ -54,7 +54,10 @@ docker compose build
 ```bash
 docker compose up
 ```
-
+To correctly close all containers you need to execute the command
+```bash
+docker compose down
+```
 
 ### Locally
 
@@ -70,4 +73,4 @@ uvicorn main:app --reload
 ```
 
 The service should now be running on `http://localhost:8000/` (or your configured host and port).
-
+Documentation for the service will be available at: `http://localhost:8000/docs`
