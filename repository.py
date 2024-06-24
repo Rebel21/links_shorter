@@ -10,6 +10,7 @@ from starlette.requests import Request
 from config import SERVER_HOST_ADDR
 from database.database import new_session
 from models.url_models import UrlModel, ShortUrlsModel
+from repositories.free_words import generate_three_words
 from schemes import UrlSchema, ShortUrlSchema, CreateUrlAndShortUrlSchema, AddShortUrlSchema
 
 
@@ -33,11 +34,13 @@ class UrlRepository:
         buffer = io.BytesIO()
         qr_code.save(buffer, "PNG")
         qr_code_str = base64.b64encode(buffer.getvalue()).decode("utf-8")
+        three_words_str = generate_three_words()
 
         return ShortUrlsModel(
             number_of_transitions=0,
             short_url=short_url,
             qr_code=qr_code_str,
+            three_words=three_words_str,
             is_activ=True
         )
 

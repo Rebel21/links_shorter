@@ -19,4 +19,5 @@ class ShortUrlsModel(Base):
     number_of_transitions: Mapped[int] = mapped_column(nullable=True)
     short_url: Mapped[str] = mapped_column(nullable=False, unique=True)
     qr_code: Mapped[str] = mapped_column(nullable=False)
+    three_words: Mapped[str] = mapped_column(nullable=False)
     is_activ: Mapped[bool] = mapped_column(default=True)
