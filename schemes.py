@@ -6,6 +6,7 @@ class ShortUrlSchema(BaseModel):
     number_of_transitions: int
     short_url: str
     qr_code: str
+    three_words: str
     is_activ: bool
 
 
@@ -21,6 +22,7 @@ class CreateShortUrlSchema(BaseModel):
     number_of_transitions: int
     short_url: str = Field(min_length=1, max_length=8)
     qr_code: str
+    three_words: str
     is_activ: bool
 
     model_config = ConfigDict(from_attributes=True)
